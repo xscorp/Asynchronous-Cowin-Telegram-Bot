@@ -14,6 +14,12 @@ PINCODE = ""
 # Insert search term/keyword here
 SEARCH_WORD = ""
 
+# Time Interval between 5 consecutive request for next 5 days in seconds
+TIME_GAP_EACH_DAY_CHECK = 30
+
+# Time Interval between every set of requests in seconds
+TIME_GAP_CHECK_AGAIN = 5 * 60
+
 # User-Agent to bypass bot detection mechanism of Cowin
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0" ,
@@ -40,8 +46,8 @@ def check_slots(update , context):
                         if SEARCH_WORD in session["name"].lower() and session["available_capacity"] > 0: # and session["min_age_limit"] <= 18:
                             slot_available_msg = f"{session['vaccine']} vaccination slot available for {session['available_capacity']} people on {session['date']} at {session['name']}\n"
                             update.message.reply_text(slot_available_msg)
-            sleep(30)
-        sleep(5 * 60)
+            sleep(TIME_GAP_EACH_DAY_CHECK)
+        sleep(TIME_GAP_CHECK_AGAIN)
 
 
 # Asynchronous function to manually check for slots at any point of time. This won't block the check_slots function
