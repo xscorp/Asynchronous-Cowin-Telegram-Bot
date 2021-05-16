@@ -1,5 +1,5 @@
 # Asynchronous-Cowin-Telegram-Bot
-A telegram bot that searches for your vaccination centeres/slots available in the specified pincode for next 5 dates every 5 minutes and filters out the one you look for based on the keyword specified.
+A telegram bot that searches for vaccination centeres/slots available in the specified pincode for next 5 dates every 5 minutes and filters out the one you want to keep track of based on the keyword specified.
 
 For example, Let's say this is the configuration:
 ```
