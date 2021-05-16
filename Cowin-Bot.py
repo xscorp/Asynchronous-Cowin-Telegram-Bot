@@ -5,9 +5,14 @@ from time import sleep
 import requests
 import json
 
-TOKEN = ""  #Insert your Telegram Bot token here
-PINCODE = "248140"
-SEARCH_WORD = "ganpati"
+#Insert your Telegram Bot token here
+TOKEN = ""
+
+# Insert pincode here
+PINCODE = ""
+
+# Insert search term/keyword here
+SEARCH_WORD = ""
 
 # User-Agent to bypass bot detection mechanism of Cowin
 headers = {
